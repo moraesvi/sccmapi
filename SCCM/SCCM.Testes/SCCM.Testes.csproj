@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B4C58B7-BE77-49F8-8E45-490E4DABA8CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCCM.Testes</RootNamespace>
+    <AssemblyName>SCCM.Testes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="API\UsuarioAppTest.cs" />
+    <Compile Include="GeradorModel\GerarModelTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSApplicationTipoDeployTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSCollectionUserDeviceModelTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSApplicationCustomModelTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSApplicationModelTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSRUserAppStatusDeploymentTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSRUserDeviceTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSRSystemCustomTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSRUserAppDeploymentTest.cs" />
+    <Compile Include="SCCM.Dominio.Model\SMSCollectionUserTest.cs" />
+    <Compile Include="SCCM.Dominio\CCMSoftwareCatalogUtilitiesTest.cs" />
+    <Compile Include="SCCM.Dominio\RequestedConfig\CCMSoftwareDistributionClientConfigTest.cs" />
+    <Compile Include="SCCM.Dominio\SCCM_SDK\ClientScriptAppTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSApplicationAssignmentTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSProviderLocationTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSApplicationTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSClient\SMSClientTest.Arquivo.cs" />
+    <Compile Include="SCCM.Dominio\SMSCollectionTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSClient\SMSClientTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSPackageTest.cs" />
+    <Compile Include="SCCM.Dominio\SMSRSystemTest.cs" />
+    <Compile Include="SCCM.Dominio\AcutualConfig\CCMSoftwareDistributionClientConfigTest.cs" />
+    <Compile Include="SCCM\SCCMConexaoTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helper\Helper.csproj">
+      <Project>{23A2E3C3-1E28-4C08-9685-828074D56CC2}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\SCCM.API.Avaiable\SCCM.API.Avaiable.csproj">
+      <Project>{0F7FFB7E-6CC8-42A6-9E35-AEF2960D5EF0}</Project>
+      <Name>SCCM.API.Avaiable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\API\SCCM.API.Infraestrutura\SCCM.API.Infraestrutura.csproj">
+      <Project>{09176F36-1353-4998-BA4E-ECD313BAB8B9}</Project>
+      <Name>SCCM.API.Infraestrutura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensao\SCCM.GeradorModel\SCCM.GeradorModel.csproj">
+      <Project>{e8997694-e0e5-40e1-bcdc-228900c851a1}</Project>
+      <Name>SCCM.GeradorModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.Dominio.Comum\SCCM.Dominio.Comum.csproj">
+      <Project>{5e9a1ede-4d98-4f1e-8e29-d8fe8227001a}</Project>
+      <Name>SCCM.Dominio.Comum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.Dominio.Model\SCCM.Dominio.Model.csproj">
+      <Project>{43025b45-3386-44cb-9a51-d5a0b638f97c}</Project>
+      <Name>SCCM.Dominio.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.Dominio.WMI\SCCM.Dominio.WMI.csproj">
+      <Project>{2342fc3e-2267-4aeb-831e-ff1a0052b866}</Project>
+      <Name>SCCM.Dominio.WMI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.Powershell\SCCM.Powershell.csproj">
+      <Project>{7b4c1df3-5871-4353-8e20-1af87bf2ef35}</Project>
+      <Name>SCCM.Powershell</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

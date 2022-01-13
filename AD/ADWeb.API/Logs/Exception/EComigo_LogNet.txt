@@ -1,0 +1,109 @@
+﻿2018-03-29 23:25:50,012 ERROR - SCCM WebApi - ADWeb.API
+2018-03-29 23:25:50,019 ERROR - quinta-feira, 29 de março de 2018
+2018-03-29 23:25:50,020 ERROR - 29/03/2018 23:25
+2018-03-29 23:25:50,020 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:25:50,020 ERROR - 
+2018-03-29 23:25:50,020 ERROR - Acesso anônimo
+2018-03-29 23:25:50,020 ERROR - Método HTTP - GET
+2018-03-29 23:25:50,020 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:25:50,020 ERROR - http://localhost:53173/api/grupo
+2018-03-29 23:25:50,020 ERROR - ADWeb.API.Controllers.GrupoController
+2018-03-29 23:25:50,020 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:25:50,020 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\ADWeb.API\
+2018-03-29 23:25:50,020 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:25:50,020 ERROR - 
+2018-03-29 23:25:50,020 ERROR - 
+System.DirectoryServices.AccountManagement.PrincipalServerDownException: Não foi possível contatar o servidor. ---> System.DirectoryServices.Protocols.LdapException: O servidor LDAP não está disponível.
+   em System.DirectoryServices.Protocols.LdapConnection.Connect()
+   em System.DirectoryServices.Protocols.LdapConnection.SendRequestHelper(DirectoryRequest request, Int32& messageID)
+   em System.DirectoryServices.Protocols.LdapConnection.SendRequest(DirectoryRequest request, TimeSpan requestTimeout)
+   em System.DirectoryServices.Protocols.LdapConnection.SendRequest(DirectoryRequest request)
+   em System.DirectoryServices.AccountManagement.PrincipalContext.ReadServerConfig(String serverName, ServerProperties& properties)
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em System.DirectoryServices.AccountManagement.PrincipalContext.ReadServerConfig(String serverName, ServerProperties& properties)
+   em System.DirectoryServices.AccountManagement.PrincipalContext.DoServerVerifyAndPropRetrieval()
+   em System.DirectoryServices.AccountManagement.PrincipalContext..ctor(ContextType contextType, String name, String container, ContextOptions options, String userName, String password)
+   em AD.Infraestrutura.Conexao.ObterServicosDirectory(String dominio, String container, String usuario, SecureString senha) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\AD.Infraestrutura\Conexao.cs:linha 22
+   em AD.Negocio.Consulta.<>c__DisplayClass7_0.<ObterGruposADPrbbrBsbr>b__0(KeyValuePair`2 dct) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\AD.Negocio\Consulta.cs:linha 52
+   em System.Collections.Generic.List`1.ForEach(Action`1 action)
+   em AD.Negocio.Consulta.ObterGruposADPrbbrBsbr() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\AD.Negocio\Consulta.cs:linha 50
+   em ADWeb.API.Controllers.GrupoController.Get() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\ADWeb.API\Controllers\GrupoController.cs:linha 27
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-29 23:26:40,041 ERROR - SCCM WebApi - ADWeb.API
+2018-03-29 23:26:40,047 ERROR - quinta-feira, 29 de março de 2018
+2018-03-29 23:26:40,048 ERROR - 29/03/2018 23:26
+2018-03-29 23:26:40,048 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:26:40,048 ERROR - 
+2018-03-29 23:26:40,048 ERROR - Acesso anônimo
+2018-03-29 23:26:40,048 ERROR - Método HTTP - GET
+2018-03-29 23:26:40,048 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:26:40,048 ERROR - http://localhost:53173/api/grupo
+2018-03-29 23:26:40,048 ERROR - ADWeb.API.Controllers.GrupoController
+2018-03-29 23:26:40,048 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:26:40,048 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\ADWeb.API\
+2018-03-29 23:26:40,048 ERROR - -------------------------------------------------------------------------------------
+2018-03-29 23:26:40,048 ERROR - 
+2018-03-29 23:26:40,048 ERROR - 
+System.Exception: Ocorreu um erro na busca dos grupos do Active Directory ---> System.DirectoryServices.Protocols.LdapException: O servidor LDAP não está disponível.
+   em System.DirectoryServices.Protocols.LdapConnection.Connect()
+   em System.DirectoryServices.Protocols.LdapConnection.SendRequestHelper(DirectoryRequest request, Int32& messageID)
+   em System.DirectoryServices.Protocols.LdapConnection.SendRequest(DirectoryRequest request, TimeSpan requestTimeout)
+   em System.DirectoryServices.Protocols.LdapConnection.SendRequest(DirectoryRequest request)
+   em System.DirectoryServices.AccountManagement.PrincipalContext.ReadServerConfig(String serverName, ServerProperties& properties)
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em AD.Infraestrutura.Conexao.ObterServicosDirectory(String dominio, String container, String usuario, SecureString senha) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\AD.Infraestrutura\Conexao.cs:linha 32
+   em AD.Negocio.Consulta.<>c__DisplayClass7_0.<ObterGruposADPrbbrBsbr>b__0(KeyValuePair`2 dct) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\AD.Negocio\Consulta.cs:linha 52
+   em System.Collections.Generic.List`1.ForEach(Action`1 action)
+   em AD.Negocio.Consulta.ObterGruposADPrbbrBsbr() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\AD.Negocio\Consulta.cs:linha 50
+   em ADWeb.API.Controllers.GrupoController.Get() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\AD\ADWeb.API\Controllers\GrupoController.cs:linha 27
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()

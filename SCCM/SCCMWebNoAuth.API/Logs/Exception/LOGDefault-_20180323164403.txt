@@ -1,0 +1,20 @@
+Não foi possível localizar uma parte do caminho 'F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWebNoAuth.API\Ext'.
+Não foi possível localizar uma parte do caminho 'F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWebNoAuth.API\Ext'.
+
+   em System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   em System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   em System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   em System.IO.DirectoryInfo.InternalGetFiles(String searchPattern, SearchOption searchOption)
+   em System.IO.DirectoryInfo.GetFiles(String searchPattern)
+   em MyBranch.Log.Factory.LogFactory.ObterArrayAssembly(String diretorio, Boolean gerarException, String exception, String innerException) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\Log\MyBranch.Log.Factory\LogFactory.cs:linha 130
+   em MyBranch.Log.Factory.LogFactory.ReflexInstanciar(String caminhoAssemblyLog) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\Log\MyBranch.Log.Factory\LogFactory.cs:linha 38
+   em SCCM.Dominio.Comum.Util.SCCMLog.<>c__DisplayClass2_0.<GravarLog>b__0(Object except) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Dominio.Comum\Util\SCCMLog.cs:linha 28
+   em System.Threading.Tasks.Task.InnerInvoke()
+   em System.Threading.Tasks.Task.Execute()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   em SCCM.Dominio.Comum.Util.SCCMLog.<GravarLog>d__2.MoveNext() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Dominio.Comum\Util\SCCMLog.cs:linha 26
+
+-------------------------------------------------------------------------

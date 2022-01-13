@@ -1,0 +1,328 @@
+﻿2018-03-29 23:57:48,075 ERROR - Método NomeArquivoLogDefault no tipo MyBranch.LogTexto.LogTexto do assembly MyBranch.LogTexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null não tem uma implementação.
+2018-03-29 23:57:48,082 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-29 23:57:48,100 ERROR - Método NomeArquivoLogDefault no tipo MyBranch.LogTexto.LogTexto do assembly MyBranch.LogTexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null não tem uma implementação.
+2018-03-29 23:57:48,100 ERROR - 
+System.TypeLoadException: Método NomeArquivoLogDefault no tipo MyBranch.LogTexto.LogTexto do assembly MyBranch.LogTexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null não tem uma implementação.
+   em System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   em System.Reflection.RuntimeAssembly.GetExportedTypes()
+   em System.Reflection.Assembly.get_ExportedTypes()
+   em MyBranch.Log.Factory.LogFactory.ObterInstanciaAssembly[T](FileInfo dll, T instance, Boolean gerarException) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\Log\MyBranch.Log.Factory\LogFactory.cs:linha 266
+   em MyBranch.Log.Factory.LogFactory.ReflexInstanciar(String caminhoAssemblyLog) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\Log\MyBranch.Log.Factory\LogFactory.cs:linha 44
+   em SCCM.Dominio.Comum.Uteis.SCCMLog.<>c__DisplayClass4_0.<LogGravar>b__0(Object except) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Dominio.Comum\Uteis\SCCMLog.cs:linha 40
+   em System.Threading.Tasks.Task.InnerInvoke()
+   em System.Threading.Tasks.Task.Execute()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   em SCCM.Dominio.Comum.Uteis.SCCMLog.<LogGravar>d__4.MoveNext() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Dominio.Comum\Uteis\SCCMLog.cs:linha 38
+2018-03-29 23:57:55,560 ERROR - Método NomeArquivoLogDefault no tipo MyBranch.LogTexto.LogTexto do assembly MyBranch.LogTexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null não tem uma implementação.
+2018-03-29 23:57:55,560 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-29 23:57:55,573 ERROR - Método NomeArquivoLogDefault no tipo MyBranch.LogTexto.LogTexto do assembly MyBranch.LogTexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null não tem uma implementação.
+2018-03-29 23:57:55,573 ERROR - 
+System.TypeLoadException: Método NomeArquivoLogDefault no tipo MyBranch.LogTexto.LogTexto do assembly MyBranch.LogTexto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null não tem uma implementação.
+   em System.Reflection.RuntimeAssembly.GetExportedTypes(RuntimeAssembly assembly, ObjectHandleOnStack retTypes)
+   em System.Reflection.RuntimeAssembly.GetExportedTypes()
+   em System.Reflection.Assembly.get_ExportedTypes()
+   em MyBranch.Log.Factory.LogFactory.ObterInstanciaAssembly[T](FileInfo dll, T instance, Boolean gerarException) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\Log\MyBranch.Log.Factory\LogFactory.cs:linha 266
+   em MyBranch.Log.Factory.LogFactory.ReflexInstanciar(String caminhoAssemblyLog) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\Log\MyBranch.Log.Factory\LogFactory.cs:linha 44
+   em SCCM.Dominio.Comum.Uteis.SCCMLog.<>c__DisplayClass4_0.<LogGravar>b__0(Object except) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Dominio.Comum\Uteis\SCCMLog.cs:linha 40
+   em System.Threading.Tasks.Task.InnerInvoke()
+   em System.Threading.Tasks.Task.Execute()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   em SCCM.Dominio.Comum.Uteis.SCCMLog.<LogGravar>d__4.MoveNext() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Dominio.Comum\Uteis\SCCMLog.cs:linha 38
+2018-03-30 00:45:36,952 ERROR - SCCM WebApi - SCCMWeb.API
+2018-03-30 00:45:36,958 ERROR - sexta-feira, 30 de março de 2018
+2018-03-30 00:45:36,958 ERROR - 30/03/2018 00:45
+2018-03-30 00:45:36,958 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:36,958 ERROR - 
+2018-03-30 00:45:36,958 ERROR - Acesso anônimo
+2018-03-30 00:45:36,958 ERROR - Método HTTP - GET
+2018-03-30 00:45:36,958 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:36,958 ERROR - http://localhost:17556/api/usuarioApp
+2018-03-30 00:45:36,958 ERROR - SCCMWeb.API.Controllers.UsuarioAppController
+2018-03-30 00:45:36,958 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:36,958 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\
+2018-03-30 00:45:36,958 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:36,958 ERROR - 
+2018-03-30 00:45:36,959 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-30 00:45:40,774 ERROR - SCCM WebApi - SCCMWeb.API
+2018-03-30 00:45:40,774 ERROR - sexta-feira, 30 de março de 2018
+2018-03-30 00:45:40,774 ERROR - 30/03/2018 00:45
+2018-03-30 00:45:40,774 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:40,774 ERROR - 
+2018-03-30 00:45:40,774 ERROR - Acesso anônimo
+2018-03-30 00:45:40,774 ERROR - Método HTTP - GET
+2018-03-30 00:45:40,774 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:40,774 ERROR - http://localhost:17556/api/usuarioApp
+2018-03-30 00:45:40,774 ERROR - SCCMWeb.API.Controllers.UsuarioAppController
+2018-03-30 00:45:40,774 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:40,774 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\
+2018-03-30 00:45:40,774 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:45:40,774 ERROR - 
+2018-03-30 00:45:40,774 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-30 00:46:04,006 ERROR - SCCM WebApi - SCCMWeb.API
+2018-03-30 00:46:04,006 ERROR - sexta-feira, 30 de março de 2018
+2018-03-30 00:46:04,006 ERROR - 30/03/2018 00:46
+2018-03-30 00:46:04,006 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:04,006 ERROR - 
+2018-03-30 00:46:04,006 ERROR - Acesso anônimo
+2018-03-30 00:46:04,006 ERROR - Método HTTP - GET
+2018-03-30 00:46:04,006 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:04,006 ERROR - http://localhost:17556/api/usuarioApp
+2018-03-30 00:46:04,006 ERROR - SCCMWeb.API.Controllers.UsuarioAppController
+2018-03-30 00:46:04,006 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:04,006 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\
+2018-03-30 00:46:04,006 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:04,006 ERROR - 
+2018-03-30 00:46:04,006 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-30 00:46:08,011 ERROR - SCCM WebApi - SCCMWeb.API
+2018-03-30 00:46:08,011 ERROR - sexta-feira, 30 de março de 2018
+2018-03-30 00:46:08,011 ERROR - 30/03/2018 00:46
+2018-03-30 00:46:08,011 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:08,011 ERROR - 
+2018-03-30 00:46:08,011 ERROR - Acesso anônimo
+2018-03-30 00:46:08,011 ERROR - Método HTTP - GET
+2018-03-30 00:46:08,011 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:08,011 ERROR - http://localhost:17556/api/usuarioApp
+2018-03-30 00:46:08,011 ERROR - SCCMWeb.API.Controllers.UsuarioAppController
+2018-03-30 00:46:08,011 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:08,011 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\
+2018-03-30 00:46:08,011 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:08,011 ERROR - 
+2018-03-30 00:46:08,011 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()
+2018-03-30 00:46:10,982 ERROR - SCCM WebApi - SCCMWeb.API
+2018-03-30 00:46:10,982 ERROR - sexta-feira, 30 de março de 2018
+2018-03-30 00:46:10,982 ERROR - 30/03/2018 00:46
+2018-03-30 00:46:10,982 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:10,982 ERROR - 
+2018-03-30 00:46:10,982 ERROR - Acesso anônimo
+2018-03-30 00:46:10,982 ERROR - Método HTTP - GET
+2018-03-30 00:46:10,982 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:10,982 ERROR - http://localhost:17556/api/usuarioApp
+2018-03-30 00:46:10,982 ERROR - SCCMWeb.API.Controllers.UsuarioAppController
+2018-03-30 00:46:10,982 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:10,982 ERROR - F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\
+2018-03-30 00:46:10,982 ERROR - -------------------------------------------------------------------------------------
+2018-03-30 00:46:10,982 ERROR - 
+2018-03-30 00:46:10,982 ERROR - 
+System.Exception: Ocorreu um erro na busca dos aplicativos ---> System.Exception: Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Cors.CorsMessageHandler.<SendAsync>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.HttpServer.<SendAsync>d__0.MoveNext()

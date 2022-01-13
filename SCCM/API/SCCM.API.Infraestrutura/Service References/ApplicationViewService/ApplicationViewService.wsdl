@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetApplications">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sortBy" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterBy" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="filterByProperty" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="queryString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maximumRows" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startRowIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="classicNameFields" type="tns:ApplicationClassicDisplayName" />
+            <s:element minOccurs="1" maxOccurs="1" name="useSecondarySort" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ApplicationProperty">
+        <s:restriction base="s:string">
+          <s:enumeration value="Id" />
+          <s:enumeration value="Name" />
+          <s:enumeration value="Publisher" />
+          <s:enumeration value="Version" />
+          <s:enumeration value="ApplicationDefinitionVersion" />
+          <s:enumeration value="Category" />
+          <s:enumeration value="Description" />
+          <s:enumeration value="Icon" />
+          <s:enumeration value="Availability" />
+          <s:enumeration value="AutoApproval" />
+          <s:enumeration value="Keywords" />
+          <s:enumeration value="PackageName" />
+          <s:enumeration value="DisplayName" />
+          <s:enumeration value="AvailableDate" />
+          <s:enumeration value="IsFeatured" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ApplicationClassicDisplayName">
+        <s:restriction base="s:string">
+          <s:enumeration value="ProgramName" />
+          <s:enumeration value="PackageName" />
+          <s:enumeration value="PackageProgramName" />
+          <s:enumeration value="ProgramPackageName" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetApplicationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationsResult" type="tns:ArrayOfAppDetailView" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalNumberRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAppDetailView">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppDetailView" nillable="true" type="tns:AppDetailView" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AppDetailView">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AppCacheableBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AutoApproval" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListDisplayName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EndUserDocLink" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SupersededApplications" type="tns:ArrayOfAppBase" />
+              <s:element minOccurs="0" maxOccurs="1" name="EndUserDocLinkText" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Icon" type="s:base64Binary" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrivacyLink" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeploymentTypeInstances" type="tns:ArrayOfDeploymentTypeData" />
+              <s:element minOccurs="1" maxOccurs="1" name="DeploymentTypeExperience" type="tns:DeploymentTypes" />
+              <s:element minOccurs="1" maxOccurs="1" name="InstallationState" type="tns:AppInstallationState" />
+              <s:element minOccurs="1" maxOccurs="1" name="InstallationErrorCode" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AppCacheableBase">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AppBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ImagePath" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="AppBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Publisher" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppVersion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationDefinitionVersion" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAppModelApplication" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAppBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AppBase" nillable="true" type="tns:AppBase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDeploymentTypeData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DeploymentTypeData" nillable="true" type="tns:DeploymentTypeData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DeploymentTypeData">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DeploymentType" type="tns:DeploymentTypes" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeploymentTypeId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Priority" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DeploymentTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Win8DeepLink" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="LinkedDeploymentTypeData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DeploymentTypeData">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DownloadUri" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DeepLinkDeploymentTypeData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:LinkedDeploymentTypeData">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Size" nillable="true" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="ProductId" nillable="true" type="s1:guid" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="AppInstallationState">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unknown" />
+          <s:enumeration value="RequirementsNotMet" />
+          <s:enumeration value="Started" />
+          <s:enumeration value="Installed" />
+          <s:enumeration value="Error" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetApplicationsMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sortBy" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterBy" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="filterByProperty" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="queryString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maximumRows" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startRowIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="classicNameFields" type="tns:ApplicationClassicDisplayName" />
+            <s:element minOccurs="1" maxOccurs="1" name="useSecondarySort" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="fillInIcon" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="platformFilter" type="tns:Platforms" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Platforms">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="None" />
+              <s:enumeration value="Win8X86" />
+              <s:enumeration value="WinRT" />
+              <s:enumeration value="WinPhone8" />
+              <s:enumeration value="IPad" />
+              <s:enumeration value="Ipod" />
+              <s:enumeration value="IPhone" />
+              <s:enumeration value="Android" />
+              <s:enumeration value="Win8X64" />
+              <s:enumeration value="WinBlueX86" />
+              <s:enumeration value="WinBlueX64" />
+              <s:enumeration value="WinBlueRT" />
+              <s:enumeration value="WinXpX86" />
+              <s:enumeration value="WinXpX64" />
+              <s:enumeration value="WinVistaX86" />
+              <s:enumeration value="WinVistaX64" />
+              <s:enumeration value="Win7X86" />
+              <s:enumeration value="Win7X64" />
+              <s:enumeration value="Win81Phone" />
+              <s:enumeration value="Win10Phone" />
+              <s:enumeration value="Win10X86" />
+              <s:enumeration value="Win10X64" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:element name="GetApplicationsMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationsMobileResult" type="tns:ArrayOfAppDetailView" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalNumberRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilteredApplications">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sortBy" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="filterBy" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="filterByProperty" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="queryString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maximumRows" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startRowIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="classicNameFields" type="tns:ApplicationClassicDisplayName" />
+            <s:element minOccurs="1" maxOccurs="1" name="useSecondarySort" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="fillInIcon" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="platform" type="tns:PlatformInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlatformInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OSVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OSArchitecture" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OSProductType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMSID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SspVersion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsClassicAppSupported" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFilteredApplicationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilteredApplicationsResult" type="tns:ArrayOfAppDetailView" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalNumberRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationDetailsResult" type="tns:AppDetailView" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationInstallationStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationInstallationStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationInstallationStatusResult" type="tns:AppInstallationStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AppInstallationStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationInstallationState" type="tns:AppInstallationState" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstallationErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetApplicationValuesForProperty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="propertyName" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationValuesForPropertyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationValuesForPropertyResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileApplicationValuesForProperty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="propertyName" type="tns:ApplicationProperty" />
+            <s:element minOccurs="1" maxOccurs="1" name="platformFilter" type="tns:Platforms" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMobileApplicationValuesForPropertyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMobileApplicationValuesForPropertyResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilteredApplicationValuesForProperty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="propertyName" type="tns:ApplicationProperty" />
+            <s:element minOccurs="0" maxOccurs="1" name="platform" type="tns:PlatformInformation" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilteredApplicationValuesForPropertyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilteredApplicationValuesForPropertyResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="maximumRows" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startRowIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortBy" type="tns:ApplicationRequestProperty" />
+            <s:element minOccurs="1" maxOccurs="1" name="sortAscending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ApplicationRequestProperty">
+        <s:restriction base="s:string">
+          <s:enumeration value="Name" />
+          <s:enumeration value="Publisher" />
+          <s:enumeration value="Category" />
+          <s:enumeration value="LastUpdated" />
+          <s:enumeration value="Status" />
+          <s:enumeration value="DeviceName" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetApplicationRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationRequestsResult" type="tns:ArrayOfRequest" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalNumberRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Request" nillable="true" type="tns:Request" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Request">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AppCacheableBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="LastChanged" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="RequestGuid" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="State" type="tns:ApplicationRequestState" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastComments" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="History" type="tns:ArrayOfApplicationRequestHistory" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="ApplicationRequestState">
+        <s:restriction base="s:string">
+          <s:enumeration value="Invalid" />
+          <s:enumeration value="Requested" />
+          <s:enumeration value="Canceled" />
+          <s:enumeration value="Denied" />
+          <s:enumeration value="Approved" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfApplicationRequestHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApplicationRequestHistory" nillable="true" type="tns:ApplicationRequestHistory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApplicationRequestHistory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="Changed" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="tns:ApplicationRequestState" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:element name="GetApplicationRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationRequestDetailsResult" type="tns:Request" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationInfoForClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommunicationInfoForClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommunicationInfoForClientResult" type="tns:ClientCommunicationInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientCommunicationInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WebServiceFQDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebServiceFQDNSignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InstallApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstallApplicationResult" type="tns:InstallationInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InstallationInformation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsAppModelApplication" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationIDSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyModelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyModelNameSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PackageIdSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyVersionSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BodySignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyAssignmentsDocument" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InstallApplicationMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="installPlatform" type="tns:Platforms" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InstallApplicationMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InstallApplicationMobileResult" type="tns:InstallationInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInformationToMakeRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="appDefinitionVersion" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInformationToMakeRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInformationToMakeRequestResult" type="tns:RequestInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RequestInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyModelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationIDSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyModelNameSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestGUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestAlreadyExists" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentState" type="tns:ApplicationRequestState" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestApplicationForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="applicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestApplicationForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestApplicationForUserResult" type="tns:ApplicationRequestState" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelApplicationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelApplicationRequestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsPrimaryMachine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPrimaryMachineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPrimaryMachineResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="persistentState" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="setAffinity" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPrimaryMachine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPrimaryMachineResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemovePrimaryMachine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePrimaryMachineResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBrandingInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reserved" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBrandingInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBrandingInformationResult" type="tns:BrandingInformation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BrandingInformation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccentColor" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactInformation" type="tns:ContactInformation" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyPrivacyUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowBackgroundImage" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowCompanyName" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowCompanyIcon" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyIcon" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorBackgroundCompanyIcon" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetApplicationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplications" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationsMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationsMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilteredApplicationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFilteredApplications" />
+  </wsdl:message>
+  <wsdl:message name="GetFilteredApplicationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilteredApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationInstallationStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationInstallationStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationInstallationStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationInstallationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationValuesForPropertySoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationValuesForProperty" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationValuesForPropertySoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationValuesForPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileApplicationValuesForPropertySoapIn">
+    <wsdl:part name="parameters" element="tns:GetMobileApplicationValuesForProperty" />
+  </wsdl:message>
+  <wsdl:message name="GetMobileApplicationValuesForPropertySoapOut">
+    <wsdl:part name="parameters" element="tns:GetMobileApplicationValuesForPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilteredApplicationValuesForPropertySoapIn">
+    <wsdl:part name="parameters" element="tns:GetFilteredApplicationValuesForProperty" />
+  </wsdl:message>
+  <wsdl:message name="GetFilteredApplicationValuesForPropertySoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilteredApplicationValuesForPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationRequests" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationInfoForClientSoapIn">
+    <wsdl:part name="parameters" element="tns:CommunicationInfoForClient" />
+  </wsdl:message>
+  <wsdl:message name="CommunicationInfoForClientSoapOut">
+    <wsdl:part name="parameters" element="tns:CommunicationInfoForClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallApplication" />
+  </wsdl:message>
+  <wsdl:message name="InstallApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InstallApplicationMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:InstallApplicationMobile" />
+  </wsdl:message>
+  <wsdl:message name="InstallApplicationMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:InstallApplicationMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationToMakeRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInformationToMakeRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetInformationToMakeRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInformationToMakeRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestApplicationForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestApplicationForUser" />
+  </wsdl:message>
+  <wsdl:message name="RequestApplicationForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestApplicationForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelApplicationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelApplicationRequest" />
+  </wsdl:message>
+  <wsdl:message name="CancelApplicationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelApplicationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPrimaryMachineSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPrimaryMachine" />
+  </wsdl:message>
+  <wsdl:message name="IsPrimaryMachineSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPrimaryMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPrimaryMachineSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPrimaryMachine" />
+  </wsdl:message>
+  <wsdl:message name="AddPrimaryMachineSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPrimaryMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePrimaryMachineSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePrimaryMachine" />
+  </wsdl:message>
+  <wsdl:message name="RemovePrimaryMachineSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePrimaryMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandingInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBrandingInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandingInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBrandingInformationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ApplicationViewServiceSoap">
+    <wsdl:operation name="GetApplications">
+      <wsdl:input message="tns:GetApplicationsSoapIn" />
+      <wsdl:output message="tns:GetApplicationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsMobile">
+      <wsdl:input message="tns:GetApplicationsMobileSoapIn" />
+      <wsdl:output message="tns:GetApplicationsMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredApplications">
+      <wsdl:input message="tns:GetFilteredApplicationsSoapIn" />
+      <wsdl:output message="tns:GetFilteredApplicationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationDetails">
+      <wsdl:input message="tns:GetApplicationDetailsSoapIn" />
+      <wsdl:output message="tns:GetApplicationDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationInstallationStatus">
+      <wsdl:input message="tns:GetApplicationInstallationStatusSoapIn" />
+      <wsdl:output message="tns:GetApplicationInstallationStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationValuesForProperty">
+      <wsdl:input message="tns:GetApplicationValuesForPropertySoapIn" />
+      <wsdl:output message="tns:GetApplicationValuesForPropertySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileApplicationValuesForProperty">
+      <wsdl:input message="tns:GetMobileApplicationValuesForPropertySoapIn" />
+      <wsdl:output message="tns:GetMobileApplicationValuesForPropertySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredApplicationValuesForProperty">
+      <wsdl:input message="tns:GetFilteredApplicationValuesForPropertySoapIn" />
+      <wsdl:output message="tns:GetFilteredApplicationValuesForPropertySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRequests">
+      <wsdl:input message="tns:GetApplicationRequestsSoapIn" />
+      <wsdl:output message="tns:GetApplicationRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRequestDetails">
+      <wsdl:input message="tns:GetApplicationRequestDetailsSoapIn" />
+      <wsdl:output message="tns:GetApplicationRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationInfoForClient">
+      <wsdl:input message="tns:CommunicationInfoForClientSoapIn" />
+      <wsdl:output message="tns:CommunicationInfoForClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallApplication">
+      <wsdl:input message="tns:InstallApplicationSoapIn" />
+      <wsdl:output message="tns:InstallApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InstallApplicationMobile">
+      <wsdl:input message="tns:InstallApplicationMobileSoapIn" />
+      <wsdl:output message="tns:InstallApplicationMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationToMakeRequest">
+      <wsdl:input message="tns:GetInformationToMakeRequestSoapIn" />
+      <wsdl:output message="tns:GetInformationToMakeRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestApplicationForUser">
+      <wsdl:input message="tns:RequestApplicationForUserSoapIn" />
+      <wsdl:output message="tns:RequestApplicationForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelApplicationRequest">
+      <wsdl:input message="tns:CancelApplicationRequestSoapIn" />
+      <wsdl:output message="tns:CancelApplicationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPrimaryMachine">
+      <wsdl:input message="tns:IsPrimaryMachineSoapIn" />
+      <wsdl:output message="tns:IsPrimaryMachineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPrimaryMachine">
+      <wsdl:input message="tns:AddPrimaryMachineSoapIn" />
+      <wsdl:output message="tns:AddPrimaryMachineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePrimaryMachine">
+      <wsdl:input message="tns:RemovePrimaryMachineSoapIn" />
+      <wsdl:output message="tns:RemovePrimaryMachineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandingInformation">
+      <wsdl:input message="tns:GetBrandingInformationSoapIn" />
+      <wsdl:output message="tns:GetBrandingInformationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApplicationViewServiceSoap" type="tns:ApplicationViewServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApplications">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsMobile">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationsMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredApplications">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetFilteredApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationDetails">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationInstallationStatus">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationInstallationStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationValuesForProperty">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationValuesForProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileApplicationValuesForProperty">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetMobileApplicationValuesForProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredApplicationValuesForProperty">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetFilteredApplicationValuesForProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRequests">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRequestDetails">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationInfoForClient">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/CommunicationInfoForClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallApplication">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/InstallApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallApplicationMobile">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/InstallApplicationMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationToMakeRequest">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetInformationToMakeRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestApplicationForUser">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/RequestApplicationForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelApplicationRequest">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/CancelApplicationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPrimaryMachine">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/IsPrimaryMachine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrimaryMachine">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/AddPrimaryMachine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePrimaryMachine">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/RemovePrimaryMachine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandingInformation">
+      <soap:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetBrandingInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ApplicationViewServiceSoap12" type="tns:ApplicationViewServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApplications">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsMobile">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationsMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredApplications">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetFilteredApplications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationDetails">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationInstallationStatus">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationInstallationStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationValuesForProperty">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationValuesForProperty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMobileApplicationValuesForProperty">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetMobileApplicationValuesForProperty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredApplicationValuesForProperty">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetFilteredApplicationValuesForProperty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRequests">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRequestDetails">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetApplicationRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommunicationInfoForClient">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/CommunicationInfoForClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallApplication">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/InstallApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InstallApplicationMobile">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/InstallApplicationMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInformationToMakeRequest">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetInformationToMakeRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestApplicationForUser">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/RequestApplicationForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelApplicationRequest">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/CancelApplicationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPrimaryMachine">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/IsPrimaryMachine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrimaryMachine">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/AddPrimaryMachine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePrimaryMachine">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/RemovePrimaryMachine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandingInformation">
+      <soap12:operation soapAction="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website/GetBrandingInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApplicationViewService">
+    <wsdl:port name="ApplicationViewServiceSoap" binding="tns:ApplicationViewServiceSoap">
+      <soap:address location="http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ApplicationViewServiceSoap12" binding="tns:ApplicationViewServiceSoap12">
+      <soap12:address location="http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

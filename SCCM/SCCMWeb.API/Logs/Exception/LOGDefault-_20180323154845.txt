@@ -1,0 +1,7 @@
+Conversor inválido
+Não foi possível criar uma instância do assembly de Log: MyBranch.LogNet.dll
+
+
+
+
+-------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx?wsdl" docRef="http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx" xmlns:q1="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website" binding="q1:ApplicationViewServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx" xmlns:q2="http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/SoftwareCatalog/Website" binding="q2:ApplicationViewServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

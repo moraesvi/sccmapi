@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<URL>
+  <Localhost_01>http://localhost:34020</Localhost_01>
+  <Localhost_02>http://localhost:4200</Localhost_02>
+  <InterfaceEcomigo_Dev>http://interface-mybranch-dev.appls.cmpn.paas.gsnetcloud.corp</InterfaceEcomigo_Dev>
+  <InterfaceEcomigo_Pre>http://interface-mybranch-pre.appls.cmpn.paas.gsnetcloud.corp</InterfaceEcomigo_Pre>
+  <InterfaceEcomigo_Pro>http://interface-mybranch-pro.appls.cmpn.paas.gsnetcloud.corp</InterfaceEcomigo_Pro>
+</URL>

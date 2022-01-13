@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E9A1EDE-4D98-4F1E-8E29-D8FE8227001A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCCM.Dominio.Comum</RootNamespace>
+    <AssemblyName>SCCM.Dominio.Comum</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\AppDetalheAudit.cs" />
+    <Compile Include="API\AppInstalacaoStatusAudit.cs" />
+    <Compile Include="API\Application.cs" />
+    <Compile Include="API\ApplicationAudit.cs" />
+    <Compile Include="ChaveValor.cs" />
+    <Compile Include="ComumResultFactory.cs" />
+    <Compile Include="Concreto\CacheArquivoJSON.cs" />
+    <Compile Include="Concreto\ParseArquivoJSON.cs" />
+    <Compile Include="Concreto\ParseArquivoXML.cs" />
+    <Compile Include="Concreto\ParseArquivoXMLResult.cs" />
+    <Compile Include="Constantes\Constantes.cs" />
+    <Compile Include="Enumerador\Enumerador.cs" />
+    <Compile Include="ExceptionModel.cs" />
+    <Compile Include="Interface\IComumResult.cs" />
+    <Compile Include="Interface\ICache.cs" />
+    <Compile Include="Interface\IComandoBase.cs" />
+    <Compile Include="Interface\IParseArquivo.cs" />
+    <Compile Include="Interface\IParseArquivoResult.cs" />
+    <Compile Include="Interface\IQueryBase.cs" />
+    <Compile Include="Interface\IWMIResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PSClasse.cs" />
+    <Compile Include="PSColecaoAudit.cs" />
+    <Compile Include="PSComando.cs" />
+    <Compile Include="PSComandoParam.cs" />
+    <Compile Include="PSFuncaoExisteAudit.cs" />
+    <Compile Include="PSQuery.cs" />
+    <Compile Include="PSObjetoDeletadoAudit.cs" />
+    <Compile Include="SMSBase.cs" />
+    <Compile Include="TriggerSchedule.cs" />
+    <Compile Include="Uteis\SCCMUteis.cs" />
+    <Compile Include="Uteis\SCCMLog.cs" />
+    <Compile Include="WMIBase.cs" />
+    <Compile Include="WMIResultFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helper\Helper.csproj">
+      <Project>{23a2e3c3-1e28-4c08-9685-828074d56cc2}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Log\MyBranch.Log.Dominio\SCCMApi.Log.Dominio.csproj">
+      <Project>{01FAC286-33FB-43AE-9BAE-E4489231292A}</Project>
+      <Name>SCCMApi.Log.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Log\MyBranch.Log.Factory\SCCMApi.Log.Factory.csproj">
+      <Project>{E399383C-72AB-40EF-A5CB-C1A91747ED41}</Project>
+      <Name>SCCMApi.Log.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensao\SCCM.Helper\SCCM.Helper.csproj">
+      <Project>{09692903-70fe-4691-8de5-22a7b7027a31}</Project>
+      <Name>SCCM.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

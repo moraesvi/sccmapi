@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F7FFB7E-6CC8-42A6-9E35-AEF2960D5EF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCCM.API.Avaiable</RootNamespace>
+    <AssemblyName>SCCM.API.Avaiable</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WSAutenticacao.cs" />
+    <Compile Include="WSEscopo.cs" />
+    <Compile Include="WSUsuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helper\Helper.csproj">
+      <Project>{23A2E3C3-1E28-4C08-9685-828074D56CC2}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SCCM.Dominio.Comum\SCCM.Dominio.Comum.csproj">
+      <Project>{5E9A1EDE-4D98-4F1E-8E29-D8FE8227001A}</Project>
+      <Name>SCCM.Dominio.Comum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SCCM.Dominio.Model\SCCM.Dominio.Model.csproj">
+      <Project>{43025B45-3386-44CB-9A51-D5A0B638F97C}</Project>
+      <Name>SCCM.Dominio.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SCCM.Dominio.WMI\SCCM.Dominio.WMI.csproj">
+      <Project>{2342FC3E-2267-4AEB-831E-FF1A0052B866}</Project>
+      <Name>SCCM.Dominio.WMI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servicos\SCCM.Servico.Dominio\SCCM.Servico.Dominio.csproj">
+      <Project>{6E08D172-49C3-4449-928C-D1722DCF68DC}</Project>
+      <Name>SCCM.Servico.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.API.Infraestrutura\SCCM.API.Infraestrutura.csproj">
+      <Project>{09176F36-1353-4998-BA4E-ECD313BAB8B9}</Project>
+      <Name>SCCM.API.Infraestrutura</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

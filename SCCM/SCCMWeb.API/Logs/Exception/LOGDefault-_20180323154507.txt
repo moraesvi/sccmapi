@@ -1,0 +1,38 @@
+SCCM WebApi - SCCMWeb.API
+15:45:07 sexta-feira, 23 de março de 2018
+23/03/2018 15:03
+-------------------------------------------------------------------------------------
+
+Acesso anônimo
+Método HTTP - GET
+-------------------------------------------------------------------------------------
+http://localhost:17556/api/usuarioApp/
+SCCMWeb.API.Controllers.UsuarioAppController
+-------------------------------------------------------------------------------------
+F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\
+-------------------------------------------------------------------------------------
+
+Ocorreu um erro na busca dos aplicativos
+Não havia um ponto de extremidade em escuta em http://srvsrvcpvwbr06.prbbr.produbanbr.corp/CMApplicationCatalog/ApplicationViewService.asmx capaz de aceitar a mensagem. Em geral, isso é causado por um endereço ou ação de SOAP incorreta. Consulte InnerException, se presente, para obter mais detalhes.
+   em SCCM.API.Avaiable.WSUsuario.ListarApp(Int32 indicePagina, Boolean defCacheResult) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 94
+   em SCCM.API.Avaiable.WSUsuario.ListarAppResult(Int32 indicePagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\API\SCCM.API.Avaiable\WSUsuario.cs:linha 39
+   em SCCMWeb.API.Controllers.UsuarioAppController.Get(Int32 pagina) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWeb.API\Controllers\UsuarioAppController.cs:linha 38
+   em lambda_method(Closure , Object , Object[] )
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   em System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+-------------------------------------------------------------------------

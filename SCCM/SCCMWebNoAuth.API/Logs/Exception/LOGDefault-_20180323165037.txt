@@ -1,0 +1,29 @@
+SCCM WebApi - SCCMWebNoAuth.API
+16:50:37 sexta-feira, 23 de março de 2018
+23/03/2018 16:50
+-------------------------------------------------------------------------------------
+
+Acesso anônimo
+Método HTTP - POST
+-------------------------------------------------------------------------------------
+http://localhost:60580/api/usuario/implantacao/Homologa%C3%83%C2%A7%C3%83%C2%A3o%20-%20Onda%201
+n/a
+-------------------------------------------------------------------------------------
+F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWebNoAuth.API\
+-------------------------------------------------------------------------------------
+
+An error occurred when trying to create a controller of type 'UsuarioController'. Make sure that the controller has a parameterless public constructor.
+Não foi possível realizar conexão ao SCCM
+   em System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   em System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   em System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__15.MoveNext()
+   em SCCM.Infraestrutura.PSConexao.Conectar() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Infraestrutura\PSConexao.cs:linha 201
+   em SCCM.Infraestrutura.PSConexao.Inicializar() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Infraestrutura\PSConexao.cs:linha 176
+   em SCCM.Infraestrutura.PSConexao..ctor(String usuario, String senha, String hostname, Boolean ssl, Int32 portaWsMan) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Infraestrutura\PSConexao.cs:linha 84
+   em SCCM.PowerShell.PSEscopo..ctor(Boolean serverSDK) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCM.Powershell\PSEscopo.cs:linha 47
+   em SCCMWebNoAuth.API.Controllers.BaseController.ConectarSCCM() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWebNoAuth.API\Controllers\BaseController.cs:linha 51
+   em SCCMWebNoAuth.API.Controllers.UsuarioController..ctor() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\SCCMWebNoAuth.API\Controllers\UsuarioController.cs:linha 20
+   em lambda_method(Closure )
+   em System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+
+-------------------------------------------------------------------------

@@ -1,0 +1,26 @@
+Hostname - DESKTOP-EINO98J
+05:34:17 sexta-feira, 23 de março de 2018
+23/03/2018 05:34
+-------------------------------------------------------------------------------------
+DESKTOP-EINO98J\bomit
+Microsoft Windows 10 Home Single Language
+Sistema Operacional de 64 bits
+-------------------------------------------------------------------------------------
+F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\App\Cliente\SCCM.App.Protocolo\bin\Release\
+-------------------------------------------------------------------------------------
+
+Ocorreu um erro na criação do Protocolo
+
+   em SCCM.App.Cliente.URLProtocol.Registrar() na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\App\Cliente\SCCM.App.Cliente\URLProtocol.cs:linha 96
+   em SCCM.App.Protocolo.Program.Main(String[] args) na F:\Working\tfsProduban\MyBranch - SCCM\MyBranchAPI\SCCM\App\Cliente\SCCM.App.Protocolo\Program.cs:linha 80
+   em System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+   em System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   em Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   em System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   em System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   em System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   em System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   em System.Threading.ThreadHelper.ThreadStart()
+
+
+-------------------------------------------------------------------------

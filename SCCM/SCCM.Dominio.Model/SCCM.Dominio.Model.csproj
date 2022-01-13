@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43025B45-3386-44CB-9A51-D5A0B638F97C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCCM.Dominio.Model</RootNamespace>
+    <AssemblyName>SCCM.Dominio.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Management.Automation.dll.10.0.10586.0\lib\net40\System.Management.Automation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCCMBase.cs" />
+    <Compile Include="SMSApplication\SMSApplication.cs" />
+    <Compile Include="SMSApplication\SMSApplication.Negocio.cs" />
+    <Compile Include="SMSApplication\SMSApplicationCustom\SMSApplicationCustom.cs" />
+    <Compile Include="SMSApplication\SMSApplicationTipoDeploy\SMSApplicationTipoDeploy.cs" />
+    <Compile Include="SMSCollection\SMSCollection.cs" />
+    <Compile Include="SMSCollection\SMSCollection.Negocio.cs" />
+    <Compile Include="SMSCollection\SMSCollectionUserDevice.cs" />
+    <Compile Include="SMSCollection\SMSCollectionUser\SMSCollectionUser.cs" />
+    <Compile Include="SMSCollection\SMSCollectionUser\UserCollection.cs" />
+    <Compile Include="SMSRSystemCustom\SMSRSystemCustom.cs" />
+    <Compile Include="SMSRSystemRelationship\SMSRSystemRelationship.cs" />
+    <Compile Include="SMSRUser\SMSRUserAppDeployment\DeployDetails.cs" />
+    <Compile Include="SMSRUser\SMSRUserAppDeployment\SMSRUserAppDeployment.cs" />
+    <Compile Include="SMSRUser\SMSRUserAppDeployment\SMSRUserAppDeployment.Negocio.cs" />
+    <Compile Include="SMSRUser\SMSRUserAppStatusDeployment\SMSRUserAppStatusDeployment.cs" />
+    <Compile Include="SMSRUser\SMSRUserDevice\UserDevice.cs" />
+    <Compile Include="SMSRUser\SMSRUserDevice\SMSRUserDevice.cs" />
+    <Compile Include="SMSRUser\SMSRUserDevice\SMSRUserDevice.Negocio.cs" />
+    <Compile Include="Util\Util.cs" />
+    <Compile Include="Win32ComputerSystemDomain\Win32ComputerSystemDomain.cs" />
+    <Compile Include="Win32ComputerSystemDomain\Win32ComputerSystemDomain.Negocio.cs" />
+    <Compile Include="WMIResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Compile Include="SMSCollection\SMSCollectionUser\SMSCollectionUser.Negocio.cs" />
+    <Compile Include="SMSApplication\SMSApplicationCustom\SMSApplicationCustom.Negocio.cs" />
+    <Compile Include="SMSCollection\SMSCollectionUserDevice.Negocio.cs" />
+    <Compile Include="SMSRSystemRelationship\SMSRSystemRelationship.Negocio.cs" />
+    <Compile Include="SMSRSystemCustom\SMSRSystemCustom.Negocio.cs" />
+    <Compile Include="SMSApplication\SMSApplicationTipoDeploy\SMSApplicationTipoDeploy.Negocio.cs" />
+    <Compile Include="Util\Util.Negocio.cs" />
+    <Compile Include="SMSRUser\SMSRUserAppStatusDeployment\SMSRUserAppStatusDeployment.Negocio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Helper\Helper.csproj">
+      <Project>{23a2e3c3-1e28-4c08-9685-828074d56cc2}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensao\SCCM.Helper\SCCM.Helper.csproj">
+      <Project>{09692903-70fe-4691-8de5-22a7b7027a31}</Project>
+      <Name>SCCM.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.Dominio.Comum\SCCM.Dominio.Comum.csproj">
+      <Project>{5e9a1ede-4d98-4f1e-8e29-d8fe8227001a}</Project>
+      <Name>SCCM.Dominio.Comum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCCM.Powershell\SCCM.Powershell.csproj">
+      <Project>{7b4c1df3-5871-4353-8e20-1af87bf2ef35}</Project>
+      <Name>SCCM.Powershell</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
