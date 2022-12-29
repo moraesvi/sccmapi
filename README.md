@@ -3,4 +3,4 @@ This Web API extends main resources from Microsoft System Center Configuration M
 The Web API executes PowerShell commands using protocols of SCCM communication.
 Each transaction made by web.api follows all security workflow from Microsoft System Center Configuration Manager as not traveling credentials on network.
 
-The Web API runs only on .Net Framework because it runs on Microsoft environment workflow.
+The Web API runs only on .Net Framework so it runs on Microsoft environment workflow.
